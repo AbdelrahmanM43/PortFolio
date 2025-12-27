@@ -9,7 +9,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) {
       const navbarHeight = document.querySelector('.navbar').offsetHeight;
       const targetPosition = target.offsetTop - navbarHeight;
-      
+
       window.scrollTo({
         top: targetPosition,
         behavior: 'smooth'
@@ -27,12 +27,12 @@ const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
   const currentScroll = window.pageYOffset;
-  
+
   if (currentScroll <= 0) {
     navbar.classList.remove('hidden');
     return;
   }
-  
+
   if (currentScroll > lastScroll && currentScroll > 100) {
     // Scrolling down
     navbar.classList.add('hidden');
@@ -40,7 +40,7 @@ window.addEventListener('scroll', () => {
     // Scrolling up
     navbar.classList.remove('hidden');
   }
-  
+
   lastScroll = currentScroll;
 });
 
@@ -77,17 +77,17 @@ tabButtons.forEach(button => {
   button.addEventListener('click', () => {
     // Remove active class from all buttons
     tabButtons.forEach(btn => btn.classList.remove('active'));
-    
+
     // Add active class to clicked button
     button.classList.add('active');
-    
+
     // Get category to filter
     const category = button.getAttribute('data-category');
-    
+
     // Filter portfolio items
     portfolioItems.forEach(item => {
       const itemCategory = item.getAttribute('data-category');
-      
+
       if (category === 'all' || itemCategory === category) {
         item.classList.remove('hidden');
         // Re-trigger animation
@@ -111,16 +111,16 @@ const navLinks = document.querySelectorAll('.nav-links a');
 
 window.addEventListener('scroll', () => {
   let current = '';
-  
+
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.clientHeight;
-    
+
     if (pageYOffset >= sectionTop - 200) {
       current = section.getAttribute('id');
     }
   });
-  
+
   navLinks.forEach(link => {
     link.classList.remove('active');
     if (link.getAttribute('href') === `#${current}`) {
@@ -144,7 +144,7 @@ const animateStats = () => {
     const duration = 2000;
     const increment = number / (duration / 16);
     let current = 0;
-    
+
     const updateCounter = () => {
       current += increment;
       if (current < number) {
@@ -154,7 +154,7 @@ const animateStats = () => {
         stat.textContent = target;
       }
     };
-    
+
     updateCounter();
   });
 };
@@ -170,7 +170,7 @@ if (aboutSection) {
       }
     });
   }, { threshold: 0.3 });
-  
+
   statsObserver.observe(aboutSection);
 }
 
@@ -214,7 +214,7 @@ function debounce(func, wait) {
 // Throttle function for resize events
 function throttle(func, limit) {
   let inThrottle;
-  return function(...args) {
+  return function (...args) {
     if (!inThrottle) {
       func.apply(this, args);
       inThrottle = true;
@@ -236,6 +236,52 @@ window.addEventListener('load', () => {
 // CONSOLE EASTER EGG
 // ========================================
 
-console.log('%c👋 مرحباً!', 'font-size: 20px; font-weight: bold; color: #8b2bc6;');
-console.log('%cأهلاً بك في بورتفوليو عبدالرحمن محمد', 'font-size: 14px; color: #32a89c;');
-console.log('%cهل أنت مطور؟ تواصل معي! 🚀', 'font-size: 12px; color: #999;');
+console.log('%c👋 Hello!', 'font-size: 20px; font-weight: bold; color: #8b2bc6;');
+console.log('%cWelcome to Abdelrahman Mohamed Portfolio', 'font-size: 14px; color: #32a89c;');
+console.log('%cAre you a developer? Contact me! 🚀', 'font-size: 12px; color: #999;');
+
+// ========================================
+// LIGHTBOX FUNCTIONALITY
+// ========================================
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCaption = document.querySelector('.lightbox-caption');
+const lightboxClose = document.querySelector('.lightbox-close');
+
+// Get all portfolio images
+const portfolioImages = document.querySelectorAll('.portfolio-item .portfolio-image');
+
+// Add click event to each portfolio image
+portfolioImages.forEach(img => {
+  img.addEventListener('click', function () {
+    lightbox.classList.add('active');
+    lightboxImg.src = this.src;
+    lightboxCaption.textContent = this.alt;
+    // Prevent body scroll when lightbox is open
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+// Close lightbox when clicking the X button
+lightboxClose.addEventListener('click', closeLightbox);
+
+// Close lightbox when clicking outside the image
+lightbox.addEventListener('click', function (e) {
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+    closeLightbox();
+  }
+});
+
+// Function to close lightbox
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
