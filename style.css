@@ -93,7 +93,116 @@ body {
   background-image: var(--gradient-bg);
   background-attachment: fixed;
   overflow-x: hidden;
+  position: relative;
 }
+
+/* Animated Glow Effects on page edges */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Top Glow */
+body::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--clr-primary) 25%,
+      var(--clr-secondary) 50%,
+      var(--clr-primary) 75%,
+      transparent 100%);
+  opacity: 0;
+  animation: glowTopBottom 4s ease-in-out infinite;
+  box-shadow: 0 0 20px var(--clr-primary);
+}
+
+/* Bottom Glow */
+body::after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--clr-secondary) 25%,
+      var(--clr-accent) 50%,
+      var(--clr-secondary) 75%,
+      transparent 100%);
+  opacity: 0;
+  animation: glowTopBottom 4s ease-in-out infinite 2s;
+  box-shadow: 0 0 20px var(--clr-secondary);
+}
+
+@keyframes glowTopBottom {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Left Side Glow */
+.glow-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg,
+      transparent 0%,
+      var(--clr-accent) 25%,
+      var(--clr-primary) 50%,
+      var(--clr-accent) 75%,
+      transparent 100%);
+  opacity: 0;
+  animation: glowSides 5s ease-in-out infinite 1s;
+  box-shadow: 0 0 20px var(--clr-accent);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Right Side Glow */
+.glow-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg,
+      transparent 0%,
+      var(--clr-secondary) 25%,
+      var(--clr-primary) 50%,
+      var(--clr-secondary) 75%,
+      transparent 100%);
+  opacity: 0;
+  animation: glowSides 5s ease-in-out infinite 3.5s;
+  box-shadow: 0 0 20px var(--clr-secondary);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes glowSides {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
 
 h1,
 h2,
@@ -717,6 +826,91 @@ ul {
 .footer p {
   color: var(--clr-text-muted);
   font-size: var(--fs-sm);
+}
+
+/* ========================================
+   LIGHTBOX
+   ======================================== */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  animation: zoomIn 0.3s ease;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  z-index: 10001;
+}
+
+.lightbox-close:hover {
+  color: var(--clr-primary);
+  transform: rotate(90deg);
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: var(--fs-base);
+  text-align: center;
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: var(--radius-full);
+  max-width: 80%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* ========================================
