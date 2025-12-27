@@ -223,7 +223,7 @@ ul {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: var(--space-md) 0;
+  padding: var(--space-sm) 0;
   background: hsla(230, 20%, 8%, 0.9);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
@@ -285,7 +285,7 @@ ul {
    ======================================== */
 
 .hero {
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
