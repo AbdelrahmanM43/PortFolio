@@ -734,6 +734,10 @@ ul {
     display: none;
   }
 
+  .hero {
+    padding-top: 120px;
+  }
+
   .hero-wrapper {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
