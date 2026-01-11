@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Abdelrahman Mohamed - Media Buyer & AI Website Design Expert">
+    <meta name="keywords" content="Media Buyer, AI Websites, Digital Marketing, Web Design">
+    <title>Abdelrahman Mohamed | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="canvas3d"></canvas>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="AR Logo" class="logo-image" loading="lazy" decoding="async">
+                <span class="logo-text">Abdelrahman Mohamed</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#results" class="nav-link">Campaign Results</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">Hello, I'm</span>
+                    <span class="title-name">Abdelrahman Mohamed</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="typing-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description">Expert in Media Buying and AI-powered Website Design using advanced
+                    technologies</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Contact Me</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#portfolio" class="btn btn-secondary"><span>View Work</span></a>
+                </div>
+                <div class="social-links">
+                    <a href="https://wa.me/201069245994" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                    </a>
+                    <a href="tel:+201069245994" class="social-icon phone" title="Phone">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-text">Media Buying</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🤖</div>
+                    <div class="card-text">AI Websites</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">📊</div>
+                    <div class="card-text">Analytics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Who I Am</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="profile.jpg" alt="Abdelrahman Mohamed" class="profile-image" loading="lazy"
+                            decoding="async">
+                    </div>
+                    <div class="stats-box">
+                        <div class="stat"><span class="stat-number">100+</span><span class="stat-label">Successful
+                                Projects</span></div>
+                        <div class="stat"><span class="stat-number">50+</span><span class="stat-label">Happy
+                                Clients</span></div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3 class="about-subtitle">Media Buyer & AI Website Developer</h3>
+                    <p class="about-description">I specialize in Media Buying and creating websites using modern AI
+                        technologies. I help companies and individuals achieve their marketing goals through effective
+                        advertising strategies and professional websites.</p>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">🎯</div>
+                            <h4>Media Buying</h4>
+                            <p>Professional ad campaign management across all platforms</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🤖</div>
+                            <h4>AI Development</h4>
+                            <p>Design smart websites using latest AI technologies</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">📊</div>
+                            <h4>Analytics</h4>
+                            <p>Data analysis and performance optimization</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🚀</div>
+                            <h4>Strategy</h4>
+                            <p>Build successful marketing strategies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">What I Offer</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" fill="url(#service1)" />
+                            <path d="M24 16v8l6 6" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="service1" x1="4" y1="4" x2="44" y2="44">
+                                    <stop stop-color="#667eea" />
+                                    <stop offset="1" stop-color="#764ba2" />
+                                </linearGradient>
+                            </defs>
+                        </svg></div>
+                    <h3>Ad Campaign Management</h3>
+                    <p>Create and manage professional advertising campaigns on Facebook, Instagram, Google Ads and all
+                        digital platforms</p>
+                    <ul class="service-features">
+                        <li>Market and audience analysis</li>
+                        <li>Create attractive ad content</li>
+                        <li>Performance optimization and ROI increase</li>
+                    </ul>
+                </div>
+                <div class="service-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" fill="url(#service2)" />
+                            <path d="M18 24l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="service2" x1="4" y1="4" x2="44" y2="44">
+                                    <stop stop-color="#f093fb" />
+                                    <stop offset="1" stop-color="#f5576c" />
+                                </linearGradient>
+                            </defs>
+                        </svg></div>
+                    <h3>AI Website Design</h3>
+                    <p>Create professional and modern websites using the latest AI technologies</p>
+                    <ul class="service-features">
+                        <li>Modern and attractive design</li>
+                        <li>Outstanding user experience</li>
+                        <li>High speed and performance</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" fill="url(#service3)" />
+                            <path d="M16 20h16M16 28h10" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="service3" x1="4" y1="4" x2="44" y2="44">
+                                    <stop stop-color="#4facfe" />
+                                    <stop offset="1" stop-color="#00f2fe" />
+                                </linearGradient>
+                            </defs>
+                        </svg></div>
+                    <h3>Marketing Consulting</h3>
+                    <p>Provide specialized consulting in digital marketing and growth strategies</p>
+                    <ul class="service-features">
+                        <li>Current performance analysis</li>
+                        <li>Develop effective marketing plans</li>
+                        <li>Continuous follow-up and improvement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Latest Projects</h2>
+            </div>
+            <div class="portfolio-grid">
+                <a href="https://propelagency.github.io/Propel-Agency/" target="_blank" class="portfolio-item">
+                    <div class="portfolio-image"><img src="propel-agency-preview.png" alt="Propel Agency"
+                            class="portfolio-screenshot" loading="lazy" decoding="async"></div>
+                    <div class="portfolio-info"><span class="portfolio-category">Website</span>
+                        <h3>Propel Agency</h3>
+                        <p>Professional website for a full-service digital marketing agency</p>
+                    </div>
+                </a>
+                <a href="https://abdelrahman11211.github.io/AmrFarid/" target="_blank" class="portfolio-item">
+                    <div class="portfolio-image"><img src="amr-farid-preview.png" alt="Amr Farid Portfolio"
+                            class="portfolio-screenshot" loading="lazy" decoding="async"></div>
+                    <div class="portfolio-info"><span class="portfolio-category">Personal Portfolio</span>
+                        <h3>Portfolio - Amr Farid</h3>
+                        <p>Professional portfolio website for showcasing work</p>
+                    </div>
+                </a>
+                <a href="https://abdelrahmanm43.github.io/ELFARES_SCOOTER/" target="_blank" class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="elfares-scooter-preview.png" alt="ELFARES SCOOTER" class="portfolio-screenshot"
+                            loading="lazy" decoding="async">
+                    </div>
+                    <div class="portfolio-info"><span class="portfolio-category">Website</span>
+                        <h3>ELFARES SCOOTER</h3>
+                        <p>Premium quality scooters website with modern design and interactive features</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="results" class="results">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Campaign Results</span>
+                <h2 class="section-title">Advertising Campaign Results</h2>
+                <p class="section-description">Some of our successful advertising campaign results on Facebook Ads</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card" data-image="ad-result-1.jpg">
+                    <img src="ad-result-1.jpg" alt="Ad Campaign Result 1" class="result-image" loading="lazy"
+                        decoding="async">
+                    <div class="result-overlay"><svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" fill="rgba(255,255,255,0.2)" />
+                            <path d="M24 16v16M16 24h16" stroke="white" stroke-width="3" stroke-linecap="round" />
+                        </svg></div>
+                </div>
+                <div class="result-card" data-image="ad-result-2.jpg">
+                    <img src="ad-result-2.jpg" alt="Ad Campaign Result 2" class="result-image" loading="lazy"
+                        decoding="async">
+                    <div class="result-overlay"><svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" fill="rgba(255,255,255,0.2)" />
+                            <path d="M24 16v16M16 24h16" stroke="white" stroke-width="3" stroke-linecap="round" />
+                        </svg></div>
+                </div>
+                <div class="result-card" data-image="ad-result-3.jpg">
+                    <img src="ad-result-3.jpg" alt="Ad Campaign Result 3" class="result-image" loading="lazy"
+                        decoding="async">
+                    <div class="result-overlay"><svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" fill="rgba(255,255,255,0.2)" />
+                            <path d="M24 16v16M16 24h16" stroke="white" stroke-width="3" stroke-linecap="round" />
+                        </svg></div>
+                </div>
+                <div class="result-card" data-image="ad-result-4.jpg">
+                    <img src="ad-result-4.jpg" alt="Ad Campaign Result 4" class="result-image" loading="lazy"
+                        decoding="async">
+                    <div class="result-overlay"><svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="20" fill="rgba(255,255,255,0.2)" />
+                            <path d="M24 16v16M16 24h16" stroke="white" stroke-width="3" stroke-linecap="round" />
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Full size image" class="lightbox-image">
+        <div class="lightbox-caption"></div>
+    </div>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Contact Me</span>
+                <h2 class="section-title">Let's Start Your Next Project</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Have a project in mind?</h3>
+                    <p>Contact me now and let's turn your idea into reality!</p>
+                    <div class="contact-methods">
+                        <a href="https://wa.me/201069245994" class="contact-method whatsapp-method">
+                            <div class="method-icon"><svg width="32" height="32" viewBox="0 0 32 32"
+                                    fill="currentColor">
+                                    <path
+                                        d="M23.295 19.176c-.396-.198-2.344-1.156-2.707-1.289-.363-.132-.628-.198-.893.199-.265.396-1.023 1.289-1.254 1.554-.231.265-.462.298-.858.1-.396-.199-1.674-.617-3.187-1.967-1.177-1.051-1.973-2.348-2.204-2.745-.231-.396-.025-.611.174-.808.179-.177.396-.462.594-.693.199-.232.265-.397.397-.662.132-.265.066-.496-.033-.694-.099-.199-.892-2.15-1.221-2.943-.323-.772-.65-.668-.892-.68-.231-.011-.496-.013-.76-.013-.265 0-.694.099-1.057.496-.363.397-1.387 1.355-1.387 3.305 0 1.95 1.42 3.833 1.617 4.098.199.264 2.795 4.266 6.77 5.983.945.408 1.683.652 2.259.834.949.301 1.813.259 2.495.157.761-.113 2.344-.958 2.675-1.884.331-.925.331-1.718.231-1.884-.099-.165-.363-.265-.76-.463m-7.228 9.871h-.005a13.16 13.16 0 01-6.708-1.837l-.482-.286-4.988 1.309 1.331-4.864-.314-.499a13.147 13.147 0 01-2.013-7.013c.001-7.267 5.915-13.179 13.184-13.179 3.52 0 6.829 1.373 9.317 3.864a13.103 13.103 0 013.857 9.325c-.004 7.267-5.916 13.179-13.18 13.179m11.218-24.396A15.753 15.753 0 0016.067 0C7.327 0 .213 7.113.21 15.856c0 2.795.729 5.523 2.117 7.927L.076 32l8.407-2.205a15.843 15.843 0 007.577 1.931h.007c8.739 0 15.853-7.113 15.857-15.857a15.762 15.762 0 00-4.64-11.218z" />
+                                </svg></div>
+                            <div class="method-text"><span class="method-label">WhatsApp</span><span
+                                    class="method-value">01069245994</span></div>
+                        </a>
+                        <a href="tel:+201069245994" class="contact-method phone-method">
+                            <div class="method-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M29.333 21.227v4a2.667 2.667 0 01-2.906 2.666 26.387 26.387 0 01-11.507-4.093 26 26 0 01-8-8 26.387 26.387 0 01-4.093-11.56 2.667 2.667 0 012.653-3.027h4a2.667 2.667 0 012.667 2.293 17.12 17.12 0 00.933 3.747 2.667 2.667 0 01-.6 2.813l-1.693 1.693a21.333 21.333 0 008 8l1.693-1.693a2.667 2.667 0 012.813-.6 17.12 17.12 0 003.747.933 2.667 2.667 0 012.293 2.707z" />
+                                </svg></div>
+                            <div class="method-text"><span class="method-label">Direct Call</span><span
+                                    class="method-value">01069245994</span></div>
+                        </a>
+                    </div>
+                    <div class="availability">
+                        <div class="availability-indicator"></div><span>Available now for new projects</span>
+                    </div>
+                </div>
+                <div class="contact-cta">
+                    <div class="cta-card">
+                        <h4>Ready to start your project?</h4>
+                        <p>Let's talk about how I can help you achieve your goals</p>
+                        <a href="https://wa.me/201069245994?text=Hi%20Abdelrahman,%20I%20want%20to%20talk%20about%20a%20project"
+                            class="btn btn-whatsapp">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                            <span>Contact via WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="AR Logo" class="logo-image">
+                        <span class="logo-text">Abdelrahman Mohamed</span>
+                    </div>
+                    <p>Media Buyer & AI Website Developer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#results">Campaign Results</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Abdelrahman Mohamed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
