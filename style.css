@@ -1329,3 +1329,123 @@ section {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==================== MUSIC CONTROL BUTTON ==================== */
+.music-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.5);
+    transition: var(--transition-base);
+    overflow: hidden;
+}
+
+.music-toggle:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 50px rgba(102, 126, 234, 0.7);
+}
+
+.music-toggle:active {
+    transform: scale(0.95);
+}
+
+.music-icon {
+    position: absolute;
+    transition: var(--transition-base);
+}
+
+.music-toggle .play-icon {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+}
+
+.music-toggle .pause-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+.music-toggle.paused .play-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+.music-toggle.paused .pause-icon {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+}
+
+/* Music Waves Animation */
+.music-waves {
+    position: absolute;
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-base);
+}
+
+.music-toggle:not(.paused) .music-waves {
+    opacity: 1;
+}
+
+.music-toggle:not(.paused) .pause-icon {
+    opacity: 0;
+}
+
+.music-waves span {
+    width: 3px;
+    height: 12px;
+    background: white;
+    border-radius: 2px;
+    animation: wave 0.8s ease-in-out infinite;
+}
+
+.music-waves span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.music-waves span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.music-waves span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        height: 8px;
+    }
+
+    50% {
+        height: 20px;
+    }
+}
+
+/* Mobile responsiveness for music button */
+@media (max-width: 768px) {
+    .music-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .music-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
