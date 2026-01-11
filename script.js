@@ -321,3 +321,75 @@ document.addEventListener('keydown', (e) => {
         closeLightbox();
     }
 });
+
+// ==================== BACKGROUND MUSIC ====================
+const bgMusic = document.getElementById('bgMusic');
+const musicToggle = document.getElementById('musicToggle');
+let isPlaying = false;
+
+// Try to autoplay music when page loads
+window.addEventListener('load', () => {
+    // Attempt autoplay
+    const playPromise = bgMusic.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                // Autoplay started
+                isPlaying = true;
+                musicToggle.classList.remove('paused');
+                console.log('🎵 Background music playing');
+            })
+            .catch((error) => {
+                // Autoplay was prevented - show paused state
+                isPlaying = false;
+                musicToggle.classList.add('paused');
+                console.log('🔇 Click the music button to start');
+            });
+    }
+});
+
+// Also try to play on first user interaction
+document.addEventListener('click', function initAudio() {
+    if (!isPlaying) {
+        bgMusic.play()
+            .then(() => {
+                isPlaying = true;
+                musicToggle.classList.remove('paused');
+            })
+            .catch(() => {
+                // User still needs to click the music button
+            });
+    }
+    // Remove this listener after first click
+    document.removeEventListener('click', initAudio);
+}, { once: true });
+
+// Music toggle button click
+musicToggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent triggering the document click
+
+    if (isPlaying) {
+        bgMusic.pause();
+        musicToggle.classList.add('paused');
+        isPlaying = false;
+    } else {
+        bgMusic.play()
+            .then(() => {
+                musicToggle.classList.remove('paused');
+                isPlaying = true;
+            })
+            .catch((error) => {
+                console.error('Error playing music:', error);
+            });
+    }
+});
+
+// Update button state when music ends
+bgMusic.addEventListener('ended', () => {
+    musicToggle.classList.add('paused');
+    isPlaying = false;
+});
+
+// Volume control (optional - set volume to 30% for background music)
+bgMusic.volume = 0.3;
